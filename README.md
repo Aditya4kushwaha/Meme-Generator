@@ -1,4 +1,4 @@
-# 😂 Meme Generator App
+# Meme Generator App 😊
 
 This is a fun and interactive Meme Generator app built with **React**, powered by **Vite** for blazing fast performance. It uses **React Router** for navigation, **React Bootstrap** for UI components, and **Fetch API** to get meme templates from an external API.
 
