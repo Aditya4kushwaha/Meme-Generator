@@ -18,30 +18,6 @@ This is a fun and interactive Meme Generator app built with **React**, powered b
 - [React Bootstrap](https://react-bootstrap.github.io/)
 - [Meme API](https://api.imgflip.com/get_memes)
 
-## 📸 Demo
-
-Check out the live demo: (https://meme-generator-aditya-kushwahas-projects-85432551.vercel.app/)
-
-## 📂 Folder Structure
-meme-generator/
-├── public/
-├── src/
-│ ├── api/ # API-related files or config
-│ ├── assets/ # Images or static files
-│ ├── components/ # Reusable components like Card and Text
-│ │ ├── Card.jsx
-│ │ └── Text.jsx
-│ ├── pages/ # Route pages
-│ │ ├── Home.jsx
-│ │ └── Edit.jsx
-│ ├── App.jsx # Main app with router setup
-│ ├── App.css
-│ └── main.jsx # ReactDOM rendering
-├── .gitignore
-├── index.html
-├── package.json
-└── vite.config.js
-
 
 ## 📦 Installation
 
