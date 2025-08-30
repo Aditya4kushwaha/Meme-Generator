@@ -19,11 +19,11 @@ const Homepage = () => {
   return (
     <div className="w-full">
       <main className="flex-grow flex flex-col items-center justify-center text-center my-16">
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
-          Generate memes in
+        <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+          Generate memes 
         </h2>
-        <h2 className="text-7xl md:text-9xl font-extrabold my-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-          seconds
+        <h2 className="text-6xl md:text-8xl font-extrabold my-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent leading-tight">
+          easily
         </h2>
 
         <div className="relative mt-8 w-full max-w-lg">

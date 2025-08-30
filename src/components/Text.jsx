@@ -2,18 +2,17 @@ import Draggable from "react-draggable";
 import { XCircle } from "lucide-react";
 
 const Text = ({ textItem, onDelete, defaultStyle }) => {
-  const { id, text } = textItem;
+  const { id, text, fontSize } = textItem;
 
   const memeTextStyle = {
     fontFamily: "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif",
-    textTransform: "uppercase",
     color: "white",
     letterSpacing: "1px",
-
     textShadow:
       "2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000",
     textAlign: "center",
     whiteSpace: "nowrap",
+    fontSize: fontSize || 40, 
   };
 
   return (
@@ -24,9 +23,10 @@ const Text = ({ textItem, onDelete, defaultStyle }) => {
           ...defaultStyle,
           transform: "translate(-50%, -50%)",
         }}
+        data-text-id={id}
       >
         <div className="relative p-2">
-          <h1 className="text-4xl font-bold" style={memeTextStyle}>
+          <h1 className="font-bold" style={memeTextStyle}>
             {text}
           </h1>
           <button
