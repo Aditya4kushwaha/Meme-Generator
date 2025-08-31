@@ -42,6 +42,13 @@
   .group:active .absolute.inset-0 {
     opacity: 1;
   }
+  
+  /* Improve text wrapping on mobile */
+  .font-bold {
+    line-height: 1.2;
+    word-break: break-word;
+    hyphens: auto;
+  }
 }
 
 /* Prevent horizontal scrolling on mobile */
@@ -59,6 +66,22 @@
   /* Improve mobile grid layout */
   .grid {
     gap: 1rem;
+  }
+  
+  /* Position back button properly on mobile */
+  .absolute.top-4.left-4 {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 50;
+  }
+  
+  /* Share dropdown positioning for mobile */
+  .relative .absolute.bottom-full {
+    bottom: calc(100% + 0.5rem);
+    left: 0;
+    right: 0;
+    z-index: 40;
   }
 }
 
@@ -100,6 +123,44 @@
   /* Mobile button improvements */
   button {
     -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Color picker improvements for mobile */
+  input[type="color"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 44px;
+  }
+  
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 8px;
+  }
+  
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 8px;
+  }
+  
+  /* Font selector improvements for mobile */
+  select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 32px;
+  }
+  
+  /* Improve select dropdown styling */
+  select option {
+    background-color: #1f2937;
+    color: white;
+    padding: 8px;
   }
 }
 
@@ -144,4 +205,243 @@
   .group:hover .group-hover\:opacity-100 {
     opacity: 1;
   }
+}
+
+/* Text wrapping improvements for mobile */
+@media (max-width: 640px) {
+  /* Ensure text wraps properly on mobile */
+  [data-text-id] h1 {
+    max-width: 80vw !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    line-height: 1.1 !important;
+  }
+  
+  /* Improve text positioning on mobile */
+  [data-text-id] {
+    max-width: 90vw;
+  }
+}
+
+/* Enhanced form controls styling */
+@media (max-width: 640px) {
+  /* Better spacing for form controls */
+  .flex.flex-col.gap-3 > div {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Improved label styling */
+  label {
+    font-weight: 500;
+    color: #d1d5db;
+  }
+  
+  /* Better input grouping */
+  .flex.items-center.gap-2 {
+    gap: 0.75rem;
+  }
+  
+  /* Color picker container */
+  .flex.items-center.gap-2:has(input[type="color"]) {
+    align-items: flex-start;
+  }
+  
+  /* Color input text field */
+  input[type="text"][placeholder="#FFFFFF"] {
+    font-family: monospace;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  /* Better spacing on desktop */
+  .flex.flex-col.gap-3 > div {
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Improved hover effects */
+  select:hover,
+  input[type="color"]:hover {
+    border-color: #8b5cf6;
+  }
+}
+
+/* Share dropdown styling */
+.share-dropdown {
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Share button hover effects */
+.bg-blue-600:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Social media button styling */
+.social-share-btn {
+  transition: all 0.2s ease;
+}
+
+.social-share-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Copy button feedback */
+.copy-btn {
+  transition: all 0.2s ease;
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mobile share dropdown improvements */
+@media (max-width: 640px) {
+  .absolute.bottom-full {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .grid.grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .grid.grid-cols-2 button {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Settings Panel Styling */
+.settings-panel {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Top Row Buttons Styling */
+.top-row-buttons button {
+  transition: all 0.2s ease;
+}
+
+.top-row-buttons button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.top-row-buttons button:active {
+  transform: translateY(0);
+}
+
+/* Text Input Fields */
+.text-input-field {
+  transition: all 0.2s ease;
+}
+
+.text-input-field:focus-within {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+/* Settings Gear Icon */
+.settings-gear {
+  transition: all 0.2s ease;
+}
+
+.settings-gear:hover {
+  transform: rotate(90deg);
+  color: #8b5cf6;
+}
+
+/* Mobile Settings Panel */
+@media (max-width: 640px) {
+  .settings-panel {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .settings-panel .bg-gray-800 {
+    border-radius: 1rem;
+  }
+  
+  .settings-panel .max-w-md {
+    max-width: 100%;
+  }
+}
+
+/* Watermark Styling */
+.watermark {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* File Upload Button */
+.upload-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Action Buttons */
+.action-buttons button {
+  transition: all 0.2s ease;
+}
+
+.action-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+.action-buttons button:active {
+  transform: translateY(0);
+}
+
+/* Download Button */
+.download-button {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.download-button:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Copy Button */
+.copy-button {
+  background: linear-gradient(135deg, #374151, #1f2937);
+}
+
+.copy-button:hover {
+  background: linear-gradient(135deg, #4b5563, #374151);
+  box-shadow: 0 4px 12px rgba(55, 65, 81, 0.4);
 }
