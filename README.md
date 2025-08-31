@@ -1,12 +1,12 @@
 # Meme Generator App 😊
 
-This is a fun and interactive Meme Generator app built with **React**, powered by **Vite** for blazing fast performance. It uses **React Router** for navigation, **React Bootstrap** for UI components, and **Fetch API** to get meme templates from an external API.
+This is a fun and interactive Meme Generator app built with **React**, powered by **Vite** for blazing fast performance. It uses **React Router** for navigation, **Tailwind CSS** for UI , and **Fetch API** to get meme templates from an external API.
 
 ## 🚀 Features
 
 - Generate random memes using an external API
 - Add top and bottom text to memes
-- Responsive UI using React Bootstrap
+- Responsive UI using Tailwind CSS
 - Routing between different pages (Home, Edit)
 - Fast build and dev server using Vite
 
@@ -15,7 +15,6 @@ This is a fun and interactive Meme Generator app built with **React**, powered b
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [React Router](https://reactrouter.com/)
-- [React Bootstrap](https://react-bootstrap.github.io/)
 - [Meme API](https://api.imgflip.com/get_memes)
 
 
