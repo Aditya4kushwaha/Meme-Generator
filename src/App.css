@@ -1,0 +1,147 @@
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  /* Ensure proper touch targets */
+  button, input, select, textarea {
+    min-height: 44px;
+  }
+  
+  /* Improve touch scrolling */
+  .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent text selection on touch devices */
+  .select-none {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Improve button touch feedback */
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Ensure proper viewport on mobile */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  /* Mobile-specific animations */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+  
+  /* Always show edit overlay on mobile for better UX */
+  .group .absolute.inset-0 {
+    opacity: 0.3;
+  }
+  
+  .group:active .absolute.inset-0 {
+    opacity: 1;
+  }
+}
+
+/* Prevent horizontal scrolling on mobile */
+@media (max-width: 768px) {
+  .container {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure meme editor fits on mobile */
+  .aspect-square {
+    max-width: 100vw;
+    max-height: 60vh;
+  }
+  
+  /* Improve mobile grid layout */
+  .grid {
+    gap: 1rem;
+  }
+}
+
+/* Improve mobile form elements */
+@media (max-width: 640px) {
+  input[type="range"] {
+    height: 8px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Mobile input improvements */
+  input[type="text"] {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile button improvements */
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Mobile navigation improvements */
+@media (max-width: 640px) {
+  /* Smooth mobile menu transitions */
+  nav {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Mobile menu backdrop */
+  nav.flex {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Mobile menu items */
+  nav.flex a,
+  nav.flex div {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Improve touch targets */
+  .cursor-pointer {
+    cursor: default;
+  }
+  
+  /* Better touch feedback */
+  button:active,
+  .cursor-pointer:active {
+    transform: scale(0.98);
+  }
+  
+  /* Always show hover states on touch devices */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+}

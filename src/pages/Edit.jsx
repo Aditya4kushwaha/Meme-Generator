@@ -98,8 +98,8 @@ const EditPage = () => {
   };
 
   return (
-    <div className="w-full flex flex-col md:flex-row" style={{ minHeight: "calc(100vh - 80px)" }}>
-      <div className="flex-grow flex items-center justify-center p-4 md:p-8 bg-black">
+    <div className="w-full flex flex-col lg:flex-row" style={{ minHeight: "calc(100vh - 80px)" }}>
+      <div className="flex-grow flex items-center justify-center p-2 sm:p-4 lg:p-8 bg-black order-2 lg:order-1">
         <div ref={memeRef} className="relative w-full max-w-lg aspect-square overflow-hidden">
           <img src={params.get("url")} alt="Meme template" className="w-full h-full object-contain" />
           {texts.map((textItem, index) => (
@@ -119,8 +119,8 @@ const EditPage = () => {
         </div>
       </div>
 
-      <div className="w-full md:w-80 bg-white/5 p-6 flex flex-col gap-4">
-        <h2 className="text-2xl font-bold text-center text-white">Edit Your Meme</h2>
+      <div className="w-full lg:w-80 bg-white/5 p-3 sm:p-6 flex flex-col gap-4 order-1 lg:order-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-center text-white">Edit Your Meme</h2>
 
         <div ref={inputsContainerRef} className="flex flex-col gap-4 flex-grow overflow-y-auto">
           {texts.map((textItem) => (
@@ -130,7 +130,7 @@ const EditPage = () => {
                   type="text"
                   value={textItem.text}
                   onChange={(e) => updateText(textItem.id, e.target.value)}
-                  className="flex-grow bg-black/20 p-2 rounded-lg border border-white/20 focus:outline-none text-white"
+                  className="flex-grow bg-black/20 p-2 rounded-lg border border-white/20 focus:outline-none text-white text-sm sm:text-base"
                 />
                 <button onClick={() => deleteText(textItem.id)} className="p-2 text-red-500 hover:bg-red-500/20 rounded-lg">
                   <Trash2 size={20} />
@@ -149,12 +149,12 @@ const EditPage = () => {
           ))}
         </div>
 
-        <button onClick={addText} className="cursor-pointer w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 font-semibold py-3 px-4 rounded-lg transition-colors">
+        <button onClick={addText} className="cursor-pointer w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 font-semibold py-3 px-4 rounded-lg transition-colors text-sm sm:text-base">
           <Type size={20} />
           Add Text Box
         </button>
 
-        <button onClick={saveMeme} className="cursor-pointer w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 font-semibold py-3 px-4 rounded-lg transition-colors">
+        <button onClick={saveMeme} className="cursor-pointer w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 font-semibold py-3 px-4 rounded-lg transition-colors text-sm sm:text-base">
           <Download size={20} />
           Save
         </button>

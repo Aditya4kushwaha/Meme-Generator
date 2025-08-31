@@ -31,7 +31,7 @@ const Text = ({ textItem, onDelete, defaultStyle }) => {
           </h1>
           <button
             onClick={() => onDelete(id)}
-            className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute -top-3 -right-3 w-8 h-8 sm:w-6 sm:h-6 bg-red-600 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity touch-manipulation"
             title="Delete text"
           >
             <XCircle size={20} />
