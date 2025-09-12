@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Homepage from "./pages/Home";
 import EditPage from "./pages/Edit";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, Menu, X, Github } from "lucide-react"; // ✅ Added Github icon
 import { useState } from "react";
 
 function App() {
@@ -45,7 +45,12 @@ function App() {
           </div>
 
           {/* Navigation */}
-          <nav className={`${mobileMenuOpen ? 'flex' : 'hidden'} sm:flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mt-3 sm:mt-0`}>
+          <nav
+            className={`${
+              mobileMenuOpen ? "flex" : "hidden"
+            } sm:flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto mt-3 sm:mt-0`}
+          >
+            {/* Sponsor */}
             <a
               href="https://buymeacoffee.com/aadi_kush"
               target="_blank"
@@ -56,14 +61,27 @@ function App() {
               <span>Sponsor</span>
             </a>
 
+            {/* GitHub Stars */}
+            <a
+              href="https://github.com/Aditya4kushwaha/Meme-Generator" // 🔗 Replace with your repo link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gradient-to-r from-gray-800/80 to-gray-900/80 hover:from-gray-800 hover:to-gray-900 rounded-xl shadow-md font-semibold transition-all text-sm sm:text-base w-full sm:w-auto justify-center"
+            >
+              <Github size={16} className="text-white" />
+              <span>Stars on GitHub</span>
+            </a>
+
+            {/* Built by */}
             <div className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 hover:bg-white/20 rounded-xl transition-colors shadow-sm text-sm sm:text-base w-full sm:w-auto justify-center">
               <span>😊</span>
-              <span className="text-xs sm:text-sm opacity-90">built by AdityaXdev</span>
+              <span className="text-xs sm:text-sm opacity-90">
+                built by AdityaXdev
+              </span>
             </div>
           </nav>
         </header>
 
-        
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/edit" element={<EditPage />} />
